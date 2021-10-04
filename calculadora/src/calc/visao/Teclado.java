@@ -4,11 +4,16 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import calc.modelo.Memoria;
+
 @SuppressWarnings("serial")
-public class Teclado extends JPanel {
+public class Teclado extends JPanel implements ActionListener {
 	private final Color COR_CINZA_ESCURO = new Color(68, 68, 68);
 	private final Color COR_CINZA_CLARO = new Color(99, 99, 99);
 	private final Color COR_LARANJA = new Color(142, 166, 60);
@@ -49,9 +54,6 @@ public class Teclado extends JPanel {
 		
 		adicionarBotao("=", COR_CINZA_ESCURO, c, 2, 4);
 		adicionarBotao(",", COR_LARANJA, c, 3, 4);
-		
-		
-		
 	}
 
 	private void adicionarBotao(String texto, Color cor, GridBagConstraints c, int x, int y) {
@@ -59,5 +61,13 @@ public class Teclado extends JPanel {
 		c.gridx = x;
 		c.gridy = y;
 		add(botao, c);
+		botao.addActionListener(this);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() instanceof JButton) {
+			JButton botao = (JButton) e.getSource();
+			Memoria.getMemoria().processarComando(botao.getText());;
+		}
 	}
 }
