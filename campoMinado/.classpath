@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="campoMinado/src"/>
+	<classpathentry kind="src" path="campoMinado/test"/>
+	<classpathentry kind="src" path="CampoMinado02/src"/>
+	<classpathentry kind="output" path="CampoMinado02/bin"/>
+</classpath>
