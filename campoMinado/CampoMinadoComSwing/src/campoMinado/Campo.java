@@ -17,16 +17,18 @@ public class Campo {
 	}
 	
 	
-	public List<Campo> campoDoTabuleiro = new ArrayList<Campo>();
+	public List<Campo> camposVizinhos = new ArrayList<Campo>();
 	
 	public boolean isVizinho(Campo isVizinho) {
 		int diferencaLinha = Math.abs(linha - isVizinho.linha);
 		int diferencaColuna = Math.abs(coluna - isVizinho.coluna);	
 		int somaDasDiferencas = diferencaColuna + diferencaLinha;
 		
-		if (somaDasDiferencas == 1) {
+		if ((linha == isVizinho.linha || coluna == isVizinho.coluna) &&
+				(somaDasDiferencas == 1 )) {
 			return true;
-		} else if (somaDasDiferencas == 2) {
+		} else if ((diferencaColuna == 1 || diferencaLinha == 1) && 
+				(somaDasDiferencas == 2 )) {
 			return true;
 		}
 		
