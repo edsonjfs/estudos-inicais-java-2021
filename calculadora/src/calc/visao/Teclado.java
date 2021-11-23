@@ -3,7 +3,6 @@ package calc.visao;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,7 +27,7 @@ public class Teclado extends JPanel implements ActionListener {
 		c.weighty = 1;
 		c.fill = GridBagConstraints.BOTH;
 		
-		adicionarBotao("AC", COR_CINZA_ESCURO, c, 0, 0);
+		adicionarBotao("Nono Ano", COR_CINZA_ESCURO, c, 0, 0);
 		adicionarBotao("+/-", COR_CINZA_ESCURO, c, 1, 0);
 		adicionarBotao("%", COR_CINZA_ESCURO, c, 2, 0);
 		adicionarBotao("/", COR_LARANJA, c, 3, 0);
@@ -67,7 +66,7 @@ public class Teclado extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton) {
 			JButton botao = (JButton) e.getSource();
-			Memoria.getMemoria().processarComando(botao.getText());;
+			Memoria.getInstancia().processarComando(botao.getText());;
 		}
 	}
 }

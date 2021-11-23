@@ -15,14 +15,14 @@ public class Display extends JPanel implements MemoriaObservador{
 	private JLabel label;
 	
 	public Display() {
-		Memoria.getMemoria().adicionarObservador(this);
+		Memoria.getInstancia().adicionarObservador(this);
 		
-		label = new JLabel(Memoria.getMemoria().getTextoAtual());
+		label = new JLabel(Memoria.getInstancia().getTextoAtual());
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("courier", Font.PLAIN, 30));
 		setBackground(new Color(46,49,50));
 		
-		setLayout(new FlowLayout(FlowLayout.RIGHT,10, 25));
+		setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 25));
 		
 		add(label);
 		
